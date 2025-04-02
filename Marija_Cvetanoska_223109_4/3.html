@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zadaca3</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var promeni = () =>
+            {
+                var isColor=$("#color").is(":checked");
+                if(isColor)
+                {
+                    $(document.body).css("background-color", $("#value").val());
+                }
+                else
+                {
+                    $(document.body).css("background-image", 'url(${$"value").val()})');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Промена на позадина</h1>
+        <div>
+            Color<input name="check" type="radio" id="color"/>
+            Image<input name="check" type="radio" id="image"/>
+            </br>
+            <label for="value">Value: </label>
+            <input id="value">
+            </br>
+            <button onclick="promeni()">Промени</button>
+        </div>
+    </body>
+</html>

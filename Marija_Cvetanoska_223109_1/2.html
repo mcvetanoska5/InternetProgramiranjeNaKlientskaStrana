@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca2</title>
+</head>
+<body>
+    <h1 id="rezultat"></h1>
+    <script type="text/javascript">
+        var broj = prompt("Vnesi telefonski broj");
+        var element = document.getElementById('rezultat');
+        var broevi = [broj.slice(0,3), broj.slice(3,6), broj.slice(6)]
+        let operator = "";
+        if(broevi[0]=='070' || broevi[0]=='071' || broevi[0]=='072') {
+            operator="T-mobile"
+        }
+        if(broevi[0]=='075' || broevi[0]=='076') {
+            operator="One"
+        }
+        if(broevi[0]=='077' || broevi[0]=='078') { 
+            operator="Vip"
+        }
+        if(operator == '') { 
+            element.innerHTML = 'Invalid input'
+        }
+        else {
+            console.log(broevi[0] + "/" + broevi[1] + "-" + broevi[2] + " "  + operator)
+        }
+    </script>
+</body>
+</html>

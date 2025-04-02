@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca4</title>
+    <script>
+        const add = () => {
+            const prvR=document.getElementById("firstReal");
+            const prvI=document.getElementById("firstImag");
+            const vtorR=document.getElementById("secondReal");
+            const vtorI=document.getElementById("secondImag");
+            const resultR=document.getElementById("resultReal");
+            const resultI=document.getElementById("resultImag");
+            resultR.value=parseInt(prvR.value) + parseInt(vtorR.value);
+            resultI.value=parseInt(prvI.value) + parseInt(vtorI.value);
+        }
+    </script>
+</head>
+<body>
+    <input id="firstReal" type="number"><input id="firstImag" type="number">i
+    <br/>
+    <input id="secondReal" type="number"><input id="secondImag" type="number">i 
+    <br/>
+    <button onclick="add()">Add</button>
+    <br/>
+    <inout id="resultReal" type="number"><input id="resultImag" type="number">i 
+</body>
+</html>

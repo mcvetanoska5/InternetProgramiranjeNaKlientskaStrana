@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca2</title>
+    <script>
+        function izbrisiElement(niza, elementZaBrisenje)
+        {
+            return niza.filter((element) => element!==elementZaBrisenje);
+        }
+        var lista = [2,5,9,6];
+        var elementZaBrisenje = 5;
+        var novaLista = izbrisiElement(lista, elementZaBrisenje);
+        console.log(novaLista);
+    </script>
+</head>
+</html>

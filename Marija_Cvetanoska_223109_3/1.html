@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca1</title>
+    <script>
+        function izbrisiDuplikati(niza) 
+        {
+            return niza.filter((vrednost,index,proverka) => {
+                return proverka.indexOf(vrednost) === index;
+            });
+        }
+        var lista = [1,3,5,4,5,2,6,7,3,2,9,10];
+        var novaLista = izbrisiDuplikati(lista);
+        console.log(novaLista);
+    </script>
+</head>
+</html>

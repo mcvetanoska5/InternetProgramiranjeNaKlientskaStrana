@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca3</title>
+    <script>
+        function Cilindar(radius, visina)
+        {
+            this.radius = radius;
+            this.visina = visina;
+            this.volumen = () => Math.PI*Math.pow(radius,2)*this.visina;
+        }
+        var c=new Cilindar(2,5)
+        console.log(c.volumen().toFixed(2))
+    </script>
+</head>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca4</title>
+    <script>
+        var knigi = [ { title: "The Hobbit", author: "J.R.R. Tolkien", alreadyRead: true },
+                    { title: "The Lord of the Rings", author: "J.R.R. Tolkien", alreadyRead: false },
+                    ];
+        for(var i=0;i<knigi.length;i++) 
+        {
+            var kniga=knigi[i];
+            var informacija = '"' + kniga.title + '" by ' + kniga.author;
+            if(kniga.alreadyRead) 
+            {
+                console.log('You already read ' + informacija);
+            } 
+            else 
+            {
+                console.log('You still need to read ' + informacija + '.');
+            }
+        }
+    </script>
+</head>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadaca1</title>
+</head>
+<body>
+    <h1 id="rezultat"></h1>
+    <script type="text/javascript">
+        var broj = prompt("Vnesi cetiricifren broj");
+        var zbir=0;
+        var brojac=0;
+        var element = document.getElementById('rezultat');
+        if(broj.length != 4 || broj.charAt(0)==='0' || isNaN(parseInt(broj))) {
+            alert("Ne moze da se proveri vneseniot broj")
+        } else {
+            let flag = true;
+            let deliv =true;
+            for(let i=0; i<broj.length; i++){
+                if(broj.charAt(i)!=broj.charAt(broj.length-i-1))
+                {
+                    flag = false;
+                    break;
+                }
+                zbir+=broj%10;
+                brojac++;
+                if(broj%zbir!=0)
+                {
+                    deliv = false;
+                    break;
+                }
+            }
+            if(flag) {
+                alert("Palindrome e")
+            }
+            else {
+                alert("Not palindrome");
+            }
+            if(deliv)
+            {
+                alert("Deliv e so zbirot na cifri")
+            }
+            else
+            {
+                alert("Ne e deliv so zbirot na cifri")
+            }
+        }
+    </script>
+</body>
+</html>

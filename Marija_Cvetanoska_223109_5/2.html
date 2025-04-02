@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Zadaca2</title>
+    <script>
+        var broj;
+        var max=10;
+        var obidi;
+        function generateRandom()  
+        {
+            broj=Math.floor((Math.random())*(10000-1000))+1000;
+            console.log(broj);
+            obidi=0;
+            document.querySelector('div#prikaz').innerHTML="";
+            document.querySelector('input#guess').value="";
+            document.querySelector('span#obidi').innerHTML=obidi;
+            document.querySelector('button#btn-pogodi').disabled=false;
+        }
+        function guess()  
+        {
+            var guess=document.querySelector('input#guess').value;
+            var status=document.querySelector('div#prikaz');
+            var tocni=0, ima=0;
+            if(isNaN(parseInt(guess)) || parseInt(guess).toString().length!==4) 
+            {
+                alert("Vnesete cetiricifren broj!");
+                return;
+            }
+            for(var i=0;i<guess.length;i++) 
+            {
+                if(broj.toString().includes(guess[i]))
+                {
+                    ima++;
+                }
+                if(guess[i]===broj.toString()[i])
+                {
+                    tocni++;
+                }
+            }
+            status.innerHTML+=`Има ${ima}, на место ${tocni} ${guess}<br>`;
+            if(tocni===4) 
+            {
+                status.innerHTML+="ПОГОДОК!!!";
+                document.querySelector('button#btn-pogodi').disabled=true;
+            }
+            else 
+            {
+                obidi++;
+                if(obidi>(max-1)) 
+                {
+                    status.innerHTML+=`Не успеавте да го погодите од ${max} обиди.Бројот е ${broj}`;
+                    document.querySelector('button#btn-pogodi').disabled=true;
+                }
+                document.querySelector('span#obidi').innerHTML=obidi;
+            }
+        }
+    </script>
+</head>
+<body onload="generateRandom()">
+<div>
+    <div style="text-align: right; float: left">
+        <label id="obidi">Обиди 0</label>
+        <p><label>Погодок: <input id="guess" type="text" style="width: 150px"/></label></p>
+        <button onclick="guess()">Погоди</button>
+        <button onclick="generateRandom()">Од почеток</button>
+    </div>
+</div>
+<br/>
+<div id="prikaz" style="clear: both"></div>
+</body>
+</html>
